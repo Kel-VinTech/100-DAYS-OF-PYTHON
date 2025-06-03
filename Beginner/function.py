@@ -117,37 +117,120 @@ travel_log = {
 # print("\n" * 100)
 # input("Press Enter to continue...")
 
-def find_highest_bid(auction_bid):
-    highest_bid = 0
-    winner = ""
+# def find_highest_bid(auction_bid):
+#     highest_bid = 0
+#     winner = ""
 
-    for bidder in auction_bid:
-        bid_amount = auction_bid[bidder]
-        if bid_amount > highest_bid:
-            highest_bid = bid_amount
-            winner = bidder
+#     for bidder in auction_bid:
+#         bid_amount = auction_bid[bidder]
+#         if bid_amount > highest_bid:
+#             highest_bid = bid_amount
+#             winner = bidder
     
-    print(f"The Winner is {winner} with a bid of {highest_bid}")
+#     print(f"The Winner is {winner} with a bid of {highest_bid}")
 
 
 
-bid_dict = {}
+# bid_dict = {}
 
-should_continue = True
+# should_continue = True
 
-while should_continue:
-    name = input("What is your name? ")
-    bid = int(input("What is your bid? $"))
-    bid_dict[name] = bid
+# while should_continue:
+#     name = input("What is your name? ")
+#     bid = int(input("What is your bid? $"))
+#     bid_dict[name] = bid
 
-    more_bids = input("Are there any other bidders? Type 'yes' or 'no'. ").lower()
+#     more_bids = input("Are there any other bidders? Type 'yes' or 'no'. ").lower()
     
     
-    if more_bids == "no":
-        should_continue = False
-        find_highest_bid(bid_dict)
+#     if more_bids == "no":
+#         should_continue = False
+#         find_highest_bid(bid_dict)
     
-    elif more_bids == "yes":
-       print("\n" * 100)
+#     elif more_bids == "yes":
+#        print("\n" * 100)
 
 
+# def format_name(f_name,l_name):
+#     formated_f_name = f_name.title()
+#     formated_l_name = l_name.title()
+#     return f"{formated_f_name} {formated_l_name}"
+
+# print(format_name("kelvin", "okafor"))
+
+# def is_leap_year(year):
+#     if year % 4 == 0:
+#         if year % 100 == 0:
+#             if year % 400 == 0:
+#                 return True
+#         else: 
+#             return True
+#     else:
+#         return False
+    
+
+
+# print(is_leap_year(1989))
+
+# def is_leap_year(year):
+#     """ this is a doc string"""
+#     """This function checks if a given year is a leap year."""
+#     if year % 4 ==0:
+#         if year % 100 == 0:
+#             if year % 400 == 0:
+#                 return True
+#             else:
+#                 return False
+#         else:
+#             return True
+#     else:
+#         return False
+    
+# print(is_leap_year(2000))
+
+
+# Calculator
+
+
+def add(n1,n2):
+    return n1 + n2
+
+
+def subtract(n1,n2):
+    return n1 - n2
+def multiply(n1,n2):
+    return n1 * n2
+
+def divide(n1,n2):
+    return n1 / n2
+
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide
+}
+
+def calculator():
+    n1 = float(input("Type your first number: "))
+
+    should_continue =True
+
+    while should_continue:
+        for key in operations:
+            print(key)
+        operator = input("Choose and operator: ")
+        n2 = float(input("Type your second choice: "))
+        answer = operations[operator](n1,n2)
+        print(f"{n1} {operator} {n2} = {answer}")
+        
+        use_result = input("Do you want to use the previous result? 'Yes' or 'No': ").lower()
+        
+        if use_result == "yes": 
+            n1 = answer
+        else:
+            should_continue = False
+            print("\n" *100)
+            calculator()
+
+calculator()
