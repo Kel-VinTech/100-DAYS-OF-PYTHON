@@ -48,7 +48,7 @@ while not game_over:
         elif  letter in correct_words:
             display += letter
         else:
-            display += "_ "
+            display += " "
 
     print(display)
 
