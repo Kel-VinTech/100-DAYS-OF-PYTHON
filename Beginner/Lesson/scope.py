@@ -1,8 +1,5 @@
 import random       
 
- ### comment this out or remove this if you don't want to output the answer to the users
-
-
 # the code below is a function to do the calculations of the game.
 def guess_calc(attempts, answer):
     
@@ -13,8 +10,8 @@ def guess_calc(attempts, answer):
         guess = int(input("Make a guess: "))
 
         if guess ==  answer:
-            print("You got it right! The answer was {answer}")
-            return
+            print(f"You got it right! The answer was {answer}")
+            break
         attempts -= 1
 
         if attempts == 0 :
@@ -25,12 +22,14 @@ def guess_calc(attempts, answer):
             else:
                 print("Too Low")
 
-    #this code breaks out of the while loop to allow users restart the game           
-    restart_game = input("do you want to restart the game? Type 'Y' or 'N': ").lower()
+    #this code breaks out of the while loop to allow users restart the game
+            
+    restart_game = input("Do you want to restart the game? Type 'Y' or 'N': ").lower()
     if restart_game == 'y':
+        print("\n" * 50)
         start_game()
     else:
-        return    
+        print("Thanks for playing. Goodbye!")    
 
 
 # the code below is a function to get the game started
@@ -41,7 +40,7 @@ def start_game():
 
 
     answer = random.randint(1,100)
-    print(answer)
+    print(answer)  # <- Uncomment only for debugging
 
     game_level = input("Choose a difficulty. Type 'easy' or 'hard':").lower()
     if game_level == "easy":
@@ -53,6 +52,8 @@ def start_game():
         guess_calc(attempts,answer)
     else:
         print("Invalid difficulty level. Please restart the game.")
+        print("\n" * 50)
+        start_game() # Restart if input was invalid
     
 start_game()
     
