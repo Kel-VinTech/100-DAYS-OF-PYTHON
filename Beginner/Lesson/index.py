@@ -1,4 +1,4 @@
-import random
+# import random
 
 # Defining a Function
 
@@ -23,49 +23,53 @@ import random
 #     number_of_steps -= 1
 #     print(number_of_steps)
 
-word_list = ["baboon", "camel", "donkey", "elephant", "flamingo", "giraffe", "hippo", "vulture", "walrus", "yak", "zebra"]
+# word_list = ["baboon", "camel", "donkey", "elephant", "flamingo", "giraffe", "hippo", "vulture", "walrus", "yak", "zebra"]
 
-game_over = False
+# game_over = False
 
-while not game_over:
-    chosen_word = random.choice(word_list)
-    print(chosen_word)
+# while not game_over:
+#     chosen_word = random.choice(word_list)
+#     print(chosen_word)
 
-    guess = str(input("Guess a word: ")).lower()
+#     guess = str(input("Guess a word: ")).lower()
 
-    placeholder = "_ " * len(chosen_word)
+#     placeholder = "_ " * len(chosen_word)
 
-    display = ""
-    correct_words = []
+#     display = ""
+#     correct_words = []
 
-    no_of_trials = len(chosen_word)
+#     no_of_trials = len(chosen_word)
 
-    for letter in chosen_word:
-        if letter == guess:
-            display += letter
-            correct_words.append(guess)
+#     for letter in chosen_word:
+#         if letter == guess:
+#             display += letter
+#             correct_words.append(guess)
 
-        elif  letter in correct_words:
-            display += letter
-        else:
-            display += " "
+#         elif  letter in correct_words:
+#             display += letter
+#         else:
+#             display += " "
 
-    print(display)
+#     print(display)
 
-    if guess not in chosen_word:
-        no_of_trials -= 1
-        print(f"you got {no_of_trials} trials left")
-        print("letter not in the chosen word")
-        if no_of_trials == 0:
-            game_over = True
-            print("Game Over, You Lose!!")
+#     if guess not in chosen_word:
+#         no_of_trials -= 1
+#         print(f"you got {no_of_trials} trials left")
+#         print("letter not in the chosen word")
+#         if no_of_trials == 0:
+#             game_over = True
+#             print("Game Over, You Lose!!")
             
-    if "_" not in display:
-        game_over= True
-        print("You Win!!")
+#     if "_" not in display:
+#         game_over= True
+#         print("You Win!!")
 
 
-    if guess in correct_words:
-        print("you have guessed this letter")
+#     if guess in correct_words:
+#         print("you have guessed this letter")
 
 
+
+
+
+""" debugging"""

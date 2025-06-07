@@ -56,7 +56,8 @@ def start_game():
         start_game() # Restart if input was invalid
     
 start_game()
-    
+
+# The code above is a simple number guessing game where the user has to guess a randomly generated number within a certain range. 
 
 
 
