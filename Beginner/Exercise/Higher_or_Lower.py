@@ -39,6 +39,7 @@ while start_game:
     print(f"Compare B: {get_formatted_data(account_b)}") 
 
     user_guess = input("who has more followers? Type 'A' or 'B': ").lower()
+    print("\n" *5)
 
 
     a_followers = account_a["follower_count"]
