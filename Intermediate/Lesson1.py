@@ -81,8 +81,6 @@ def process_coin():
     pennies = float(input("How many pennies?: "))
 
     total_value = 0.25 * quarters + 0.1 * dimes + 0.05 * nickles + 0.01 * pennies
-
-
     return total_value
 
 
@@ -97,7 +95,7 @@ def is_successful(money_received,drink_cost):
         return True,change
     elif money_received < drink_cost:
         print("Sorry that's not enough money. Money refunded")
-        return False
+        return False,0
 
 """TODO: 5 TURN OFF THE PROGRAM
 """
@@ -119,6 +117,7 @@ while should_start:
                 resources["milk"] -= milk
                 resources["coffee"] -= coffee
                 if change > 0:
-                    print(f"Here's your {change} change")
+                    print(f"Here's your ${change} change")
                 print(f"Here is your {order}. Enjoy!")
+                
     
