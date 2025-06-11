@@ -21,4 +21,4 @@ class QuizBrain:
             print(f"You got it wrong, correct answer is {correct_answer}")
             print(f"your current score is {self.score}/{self.question_number}")
 
-    # def compelted_quiz(self):
+    
