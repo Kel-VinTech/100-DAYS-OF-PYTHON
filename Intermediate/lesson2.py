@@ -68,19 +68,55 @@ def random_color():
 
 
 
-tinny.pensize(10)
-tinny.speed("fastest")
-colors = [ "blue", "red", "green", "black"]
-directions = [0, 90 , 180 , 270]
+# tinny.pensize(10)
+# tinny.speed("fastest")
+# colors = [ "blue", "red", "green", "black"]
+# directions = [0, 90 , 180 , 270]
 
-for _ in range(200):
-    tinny.setheading(random.choice(directions))
-    tinny.forward(30)
-    tinny.color(random_color())
+# for _ in range(200):
+#     tinny.setheading(random.choice(directions))
+#     tinny.forward(30)
+#     tinny.color(random_color())
     
 
+# tinny.speed("fastest")
+# def draw_sprial(size_of_gap):
+#     for _ in range(int(360 / size_of_gap)):
+#         tinny.color(random_color())
+#         tinny.setheading(tinny.heading() + size_of_gap)
+#         tinny.circle(100)
+
+
+# draw_sprial(5)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+screen = t.Screen()
+screen.exitonclick()
 
 
