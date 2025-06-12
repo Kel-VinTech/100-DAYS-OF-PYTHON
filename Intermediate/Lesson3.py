@@ -58,24 +58,21 @@ Learning about object state"""
 # tim = Turtle()
 import random
 screen = Screen()
-screen.setup(width = 500, height =400)
+screen.setup(width = 800, height =700)
 
 user_bet = screen.textinput(title = "make your turtle", prompt = "Who would win the race?: ")
 print(user_bet)
 colors = ["Red", "Blue", "Green", "Yellow", "Purple", "Orange"]
-y_positions = [-120, -80,-40, 0 ,40, 80]
+y_positions = [-250, -150, -50, 50 ,150, 230]
 
 all_turtles = []
 is_game_on = False
-
-
-
 
 for turtle_index in range(0,6):
     new_turtle = Turtle(shape = "turtle")
     new_turtle.color(colors[turtle_index])
     new_turtle.penup()
-    new_turtle.goto(x = -230, y = y_positions[turtle_index])
+    new_turtle.goto(x = -380, y = y_positions[turtle_index])
     all_turtles.append(new_turtle)
 
 
@@ -88,7 +85,7 @@ while is_game_on:
         rand_distance = random.randint(0,10)
         turtle.forward(rand_distance)
 
-        if turtle.xcor() >230:
+        if turtle.xcor() >380:
             is_game_on= False
             winning_color = turtle.pencolor()
 
