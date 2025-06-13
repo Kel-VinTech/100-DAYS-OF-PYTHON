@@ -47,5 +47,51 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
-        
-        
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+""" class inheritance
+"""
+
+
+# class Animal:
+#     def __init__(self):
+#         self.has_eyes = 2
+
+#     def breathe(self):
+#         print("Breathing....")
+    
+
+# class Fish(Animal):
+#     def __init__(self):
+#         super().__init__()
+#     def breathe(self):
+#         super().breathe()
+#         print("doing this underwater")
+#     def swim(self):
+#         print("swimming...")
+
+
+# nemo = Fish()
+
+
+# nemo.breathe()
