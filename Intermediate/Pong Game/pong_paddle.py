@@ -10,15 +10,17 @@ class Paddle(Turtle):
         self.penup()
         self.shapesize(stretch_wid=5, stretch_len=1)
         self.goto(position)
-
+        self.speed("fastest")  # Set the speed to the fastest for immediate response
 
     def go_up(self):
-        new_y = self.ycor() + 20
-        self.goto(self.xcor(), new_y)
+        if self.ycor() < 250:
+            new_y = self.ycor() + 30  # You can also increase the movement here
+            self.goto(self.xcor(), new_y)
 
     def go_down(self):
-        new_y = self.ycor() - 20
-        self.goto(self.xcor(), new_y)
+        if self.ycor() > -250:
+            new_y = self.ycor() - 30
+            self.goto(self.xcor(), new_y)
 
 
 

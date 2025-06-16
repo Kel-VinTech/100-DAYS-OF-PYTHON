@@ -13,7 +13,8 @@ screen.tracer(0)
 r_paddle = Paddle((350,0))
 l_paddle = Paddle((-350,0))
 ball = Ball()
-Scoreboard = Scoreboard()
+
+scoreboard = Scoreboard()
 
 
 screen.listen()
@@ -21,8 +22,7 @@ screen.onkey(r_paddle.go_up, "Up")
 screen.onkey(r_paddle.go_down, "Down")
 screen.onkey(l_paddle.go_up, "w")
 screen.onkey(l_paddle.go_down, "s")
-r_paddle.speed("fastest")
-l_paddle.speed("fastest")   
+  
 
 game_is_on =True
 while game_is_on:
@@ -41,11 +41,12 @@ while game_is_on:
     # ball right_paddle out of bounds
     if ball.xcor() > 380:
         ball.reset_position()
+        scoreboard.l_point()
     
     # detect left paddle out of bounds
     if ball.xcor() < -380:
         ball.reset_position()
-
+        scoreboard.r_point()
 
 screen.exitonclick()
 
