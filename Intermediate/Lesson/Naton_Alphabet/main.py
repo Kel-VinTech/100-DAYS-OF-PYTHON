@@ -63,7 +63,7 @@
 
 
 
-""""NATO Alphabet   """
+# """"NATO Alphabet   """
 import pandas
 nato_data = pandas.read_csv("Intermediate/Lesson/Naton_Alphabet/nato_phonetic_alphabet.csv")
 
@@ -73,3 +73,5 @@ nato_dict = {row.letter: row.code for (index,row) in nato_data.iterrows()}
 
 result = [nato_dict[char] for char in user_input ]
 print(result)
+
+
