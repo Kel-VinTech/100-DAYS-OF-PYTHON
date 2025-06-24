@@ -34,6 +34,6 @@ label = Label(text= "Km", font = ("Arial", 10, "bold"))
 label.grid (column=2, row=1)
 
 button = Button(text= "Calculate", font = ("Arial", 10, "bold"), command = calculate_km)
-button.grid (column=1, row=3)
+button.grid (column=1, row=2)
 
 window.mainloop()
