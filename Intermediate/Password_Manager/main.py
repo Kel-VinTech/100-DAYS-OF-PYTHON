@@ -18,7 +18,7 @@ numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 
-def generate_password():
+def generate_new_password():
     password_letters = [choice(letters) for _ in range(randint(8, 10))]
     password_symbols = [choice(symbols) for _ in range(randint(2, 4))]
     password_numbers = [choice(numbers) for _ in range(randint(2, 4))]
@@ -61,6 +61,8 @@ def save():
             finally:
                     entry_website.delete(0, END)  # Clear the website entry field
                     entry_password.delete(0, END)  # Clear the password entry field
+
+
 
 def find_password():
     website = entry_website.get()
@@ -107,7 +109,7 @@ entry_password = Entry(width=21)
 entry_password.grid(column=1, row=3)
 
 
-button_password = Button(text="Generate Password", width=13, command=generate_password)
+button_password = Button(text="Generate Password", width=13, command=generate_new_password)
 button_password.grid(column=2, row=3)
 
 button_add = Button(text="Add", width=40, command=save)
