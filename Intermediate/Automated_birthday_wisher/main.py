@@ -18,7 +18,23 @@ simple mail transfer protocol
 
 
 import datetime as dt
+import random
+import pandas
+# now = dt.datetime.now()
+# year = now.year
+# day = now.weekday()
+# month = now.month
+# print(day, year)
 
-now = dt.datetime.now()
 
-print(now)
+
+def generate_quotes():
+    now = dt.datetime.now()
+    with open("Intermediate/Automated_birthday_wisher/quotes.txt" , "r") as data_quote:
+        data = pandas.DataFrame(data_quote)
+        
+        if now.weekday():
+            print(random.choice(data[0]))
+            print(now)
+generate_quotes()
+
