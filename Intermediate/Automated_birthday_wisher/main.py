@@ -20,6 +20,7 @@ simple mail transfer protocol
 import datetime as dt
 import random
 import pandas
+import smtplib
 # now = dt.datetime.now()
 # year = now.year
 # day = now.weekday()
@@ -30,11 +31,23 @@ import pandas
 
 def generate_quotes():
     now = dt.datetime.now()
-    with open("Intermediate/Automated_birthday_wisher/quotes.txt" , "r") as data_quote:
-        data = pandas.DataFrame(data_quote)
-        
-        if now.weekday():
-            print(random.choice(data[0]))
-            print(now)
+    my_email = "harryrober63@gmail.com"
+    password = "fsya awnu zlvu tjyt"
+
+    if now.weekday() == 0:
+        with open("Intermediate/Automated_birthday_wisher/quotes.txt" , "r") as data_quote:
+            data = data_quote.readlines()
+            quote = random.choice(data)
+            print(quote)
+
+        with smtplib.SMTP("smtp.gmail.com") as connection:
+                connection.starttls()
+                connection.login(user = my_email, password = password)
+                connection.sendmail(
+                    from_addr=my_email, 
+                    to_addrs="harryrober63@gmail.com", 
+                    msg = f"Subject:Hello\n\n {quote}"
+                )
+
 generate_quotes()
 
