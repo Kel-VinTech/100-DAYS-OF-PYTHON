@@ -21,6 +21,7 @@ import datetime as dt
 import random
 import pandas
 import smtplib
+from email_credentials import MY_EMAIL, MY_PASSWORD
 # now = dt.datetime.now()
 # year = now.year
 # day = now.weekday()
@@ -31,8 +32,6 @@ import smtplib
 
 def generate_quotes():
     now = dt.datetime.now()
-    my_email = "harryrober63@gmail.com"
-    password = "fsya awnu zlvu tjyt"
 
     if now.weekday() == 0:
         with open("Intermediate/Automated_birthday_wisher/quotes.txt" , "r") as data_quote:
@@ -42,9 +41,9 @@ def generate_quotes():
 
         with smtplib.SMTP("smtp.gmail.com") as connection:
                 connection.starttls()
-                connection.login(user = my_email, password = password)
+                connection.login(user = MY_EMAIL, password = MY_PASSWORD)
                 connection.sendmail(
-                    from_addr=my_email, 
+                    from_addr=MY_EMAIL, 
                     to_addrs="harryrober63@gmail.com", 
                     msg = f"Subject:Hello\n\n {quote}"
                 )
