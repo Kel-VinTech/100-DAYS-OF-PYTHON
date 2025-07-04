@@ -17,6 +17,7 @@ API_LOCATION = "https://api.openweathermap.org/data/2.5/forecast"
 
 response = requests.get(API_LOCATION,params = weather_param)
 print(response.raise_for_status())
+print(response)
 data = response.json()
 weather_id = data["list"][0]["weather"][0]["id"]
 weather_desc = data["list"][0]["weather"][0]["description"]
