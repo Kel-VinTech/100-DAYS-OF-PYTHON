@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime
-from habit_private_key import API_ID,API_KEY,YOUR_USERNAME,YOUR_PASSWORD
+from habit_private_key import API_ID,API_KEY, HEADER
 
 GENDER = "male"
 WEIGHT_KG = 45
@@ -31,7 +31,7 @@ results = response.json()
 # Sheety API endpoint
 SHEETY_ENDPOINT = "https://api.sheety.co/f79aadcd14f247f871465aa52a3eae2f/workout/workouts"
 
-headers = {"Authorization: Basic S2VsdmluZXRoOnphZGR5NDMwMA"}
+headers = HEADER
 
 today_date = datetime.now().strftime("%d%m%y")
 now_time =datetime.now().strftime("%X")
