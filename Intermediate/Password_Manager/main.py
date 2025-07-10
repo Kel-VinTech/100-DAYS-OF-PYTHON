@@ -52,7 +52,7 @@ def save():
                     data = json.load(data_file) # how to read data from json file
             
             except FileNotFoundError:
-                with open("data,json", "w") as data_file:
+                with open("data.json", "w") as data_file:
                     json.dump(new_data,data_file,indent=4)
             else:     
                 data.update(new_data)   
