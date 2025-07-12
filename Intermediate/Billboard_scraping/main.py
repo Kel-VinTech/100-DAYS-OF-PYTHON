@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+# import spotipy
+# from spotipy.oauth2 import SpotifyClientCredentials
 
 header = {
     "USER-AGENT": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
