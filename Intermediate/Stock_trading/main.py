@@ -57,7 +57,7 @@ formatted_article = [f"{STOCK_NAME}: {up_down}{pd}%\nHeadline:{article['title']}
 
 
 for article in formatted_article:
-    with smtplib.SMTP("smtp.gmail.com") as connection:
+    with smtplib.SMTP("smtp.gmail.com",port=587) as connection:
         connection.starttls()
         connection.login(user = MY_EMAIL,password = MY_PASSWORD)
         connection.sendmail(
