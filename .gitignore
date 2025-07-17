@@ -2,3 +2,4 @@ email_credentials.py
 Private_keys.py
 habit_private_key.py
 .venv/
+private_constant.py
