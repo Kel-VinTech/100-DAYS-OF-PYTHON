@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+
 import time
 class InternetSpeedTwitterBot():
     def __init__(self):
@@ -13,6 +15,7 @@ class InternetSpeedTwitterBot():
 
     def get_internet_speed(self):
         self.driver.get(url="https://www.speedtest.net/result/18003965361")
+        self.driver.find_element(By.CLASS_NAME, "download-speed").text
 
 
     def tweet_at_provider(self):
